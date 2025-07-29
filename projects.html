@@ -59,6 +59,7 @@
 
   const loader = new STLLoader();
   loader.load('Bathroom-Stuff-v4.stl', geometry => {
+    console.log("STL file loaded successfully:", geometry);
     const material = new THREE.MeshNormalMaterial();
     const mesh = new THREE.Mesh(geometry, material);
     mesh.rotation.x = -Math.PI / 2;
