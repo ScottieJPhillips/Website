@@ -37,7 +37,7 @@
   </footer>
 
 <script type="module">
-  import * as THREE from '../node_modules/three/build/three.module.js';
+  import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
   import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js';
   import { STLLoader } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/STLLoader.js';
 
@@ -57,9 +57,14 @@
   scene.add(light);
   scene.add(new THREE.AmbientLight(0x888888));
 
+  const testGeo = new THREE.BoxGeometry(20, 20, 20);
+  const testMat = new THREE.MeshNormalMaterial();
+  const testCube = new THREE.Mesh(testGeo, testMat);
+  scene.add(testCube);
+
   const loader = new STLLoader();
   loader.load('Bathroom-Stuff-v4.stl', geometry => {
-    console.log("STL file loaded successfully:", geometry);
+    console.log("STL loaded!");
     const material = new THREE.MeshNormalMaterial();
     const mesh = new THREE.Mesh(geometry, material);
     mesh.rotation.x = -Math.PI / 2;
