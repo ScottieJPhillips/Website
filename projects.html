@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Projects</title>
   <link rel="stylesheet" href="styles.css" />
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js" crossorigin="anonymous"></script>
   <style>
     #viewer {
       width: 100%;
@@ -39,7 +39,9 @@
         ar
         ar-modes="webxr scene-viewer quick-look"
         exposure="1.1"
-        environment-image="neutral">
+        environment-image="neutral"
+        poster="poster.webp"
+        crossorigin="anonymous">
       </model-viewer>
     </div>
   </main>
